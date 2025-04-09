@@ -31,16 +31,16 @@ const Hero = () => {
               <span>App Store</span>
             </button>
           </div>*/}
-          <div className="flex space-x-4">
+          <div className="flex space-x-4" >
             <a href="#">
-              <img
+              <img  style={{ height: '80px', padding: '4px' }} 
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                 alt="Get it on Google Play"
                 className="h-12"
               />
             </a>
             <a href="#">
-              <img
+            <img  style={{ height: '80px', padding: '4px' }} 
                 src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                 alt="Download on the App Store"
                 className="h-12"
