@@ -1,17 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import AddTour from './components/AddTour';
 import BackToTop from './components/BackToTop';
 import EventCalendar from './components/EventCalendar';
 import Experience from './components/Experience';
 import ExploreMorocco from './components/ExploreMorocco';
+import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Pricing from './components/Pricing';
 import ServiceBenefits from './components/ServiceBenefits';
-import ServiceDetails from './components/ServiceDetails';
-import Footer from './components/Footer';
+import BusinessPartner from './pages/BusinessPartner';
 
 function App() {
   return (
@@ -34,7 +33,8 @@ function App() {
               <Pricing />
             </motion.div>
           } />
-          <Route path="/services" element={<ServiceDetails />} />
+          {/* <Route path="/services" element={<ServiceDetails />} /> */}
+          <Route path="/business-partner" element={<BusinessPartner />} />
         </Routes>
         <BackToTop />
         <Footer />

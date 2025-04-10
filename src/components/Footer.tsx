@@ -1,5 +1,5 @@
 import React from 'react';
-import advd from '../assets/img/advanced-logo.png';
+import Logo from '../assets/img/logo_morroco_view2.svg';
 
 const Footer: React.FC = () => {
     return (
@@ -8,12 +8,13 @@ const Footer: React.FC = () => {
 
                 {/* Logos */}
                 <div className="logos flex flex-col justify-around items-center">
-                    <img
-                        src={advd}
-                        alt="ADVANCED IA Logo"
-                        style={{ height: '150px', padding: '4px' }} 
-                       // className="h-24 p-1"      // ← ici on passe de h-16 à h-24
-                    />
+                    <div className="bg-white p-3 rounded-lg">
+                        <img
+                            src={Logo}
+                            alt="Morocco View Logo"
+                            style={{ height: '120px' }} 
+                        />
+                    </div>
                 </div>
 
 

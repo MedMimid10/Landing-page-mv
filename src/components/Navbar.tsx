@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Compass, Menu, X } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import Logo from '../assets/img/logo_morroco_view.svg';
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -49,9 +50,8 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <Compass className="w-8 h-8 text-primary-500" />
-          <span className="text-xl font-bold text-primary-500">Morocco View</span>
+        <div className="flex items-center">
+          <img src={Logo} alt="Morocco View Logo" className="h-12" />
         </div>
         
         <div className="hidden md:flex items-center space-x-6">

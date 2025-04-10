@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, ExternalLink } from 'lucide-react';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SectionTitle from './SectionTitle';
 
 const plans = [
@@ -121,29 +122,79 @@ const Pricing = () => {
             {/* Card Content */}
             <div className="p-8">
               {formStage === "plan" ? (
-                <div>
-                  <h4 className="text-lg font-semibold text-primary-500 mb-6">What's included:</h4>
-                  <ul className="space-y-4 mb-8">
-                    {currentPlan.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-3 text-primary-500">
-                        <div className="bg-primary-100 p-1 rounded-full">
-                          <Check className="w-4 h-4 text-primary-500 flex-none" />
+                <>
+                  {selectedPlan === "traveler" ? (
+                    // Traveler Plan Layout
+                    <div>
+                      <h4 className="text-lg font-semibold text-primary-500 mb-6">What's included:</h4>
+                      <ul className="space-y-4 mb-8">
+                        {currentPlan.features.map((feature, i) => (
+                          <li key={i} className="flex items-center gap-3 text-primary-500">
+                            <div className="bg-primary-100 p-1 rounded-full">
+                              <Check className="w-4 h-4 text-primary-500 flex-none" />
+                            </div>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      
+                      <div className="mt-8">
+                        <button 
+                          onClick={() => setFormStage("contact")}
+                          className="w-full btn-primary bg-primary-500 text-white flex items-center justify-center gap-2 py-3 rounded-lg hover:bg-primary-600 transition-all"
+                        >
+                          <span>Request {currentPlan.name} Demo</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    // Business Partner Layout
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="text-lg font-semibold text-primary-500 mb-6">What's included:</h4>
+                        <ul className="space-y-4 mb-8">
+                          {currentPlan.features.map((feature, i) => (
+                            <li key={i} className="flex items-center gap-3 text-primary-500">
+                              <div className="bg-primary-100 p-1 rounded-full">
+                                <Check className="w-4 h-4 text-primary-500 flex-none" />
+                              </div>
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="flex flex-col justify-center">
+                        <div className="rounded-xl overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 p-6 border border-primary-200 shadow-sm">
+                          <h4 className="text-lg font-bold text-primary-600 mb-3">Business Partner Details</h4>
+                          <p className="text-primary-600/80 mb-4">
+                            View our comprehensive back office features, agency dashboard, and partner benefits.
+                          </p>
+                          <Link 
+                            to="/business-partner" 
+                            className="group flex items-center justify-between bg-primary-500 hover:bg-primary-600 text-white py-3 px-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                          >
+                            <span className="text-base font-semibold">Explore Business Partner</span>
+                            <div className="bg-white/20 rounded-full p-1.5 group-hover:bg-white/30 transition-colors">
+                              <ExternalLink className="w-4 h-4" />
+                            </div>
+                          </Link>
                         </div>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <div className="mt-8">
-                    <button 
-                      onClick={() => setFormStage("contact")}
-                      className="w-full btn-primary bg-primary-500 text-white flex items-center justify-center gap-2 py-3 rounded-lg hover:bg-primary-600 transition-all"
-                    >
-                      <span>Request {currentPlan.name} Demo</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
+                      </div>
+                      
+                      <div className="md:col-span-2">
+                        <button 
+                          onClick={() => setFormStage("contact")}
+                          className="w-full btn-primary bg-primary-500 text-white flex items-center justify-center gap-2 py-3 rounded-lg hover:bg-primary-600 transition-all"
+                        >
+                          <span>Request {currentPlan.name} Demo</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </>
               ) : (
                 <div>
                   <h4 className="text-lg font-semibold text-primary-500 mb-6">
