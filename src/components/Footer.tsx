@@ -3,7 +3,7 @@ import Logo from '../assets/img/logo_morroco_view2.svg';
 
 const Footer: React.FC = () => {
     return (
-        <div className="footer bg-[#AE1913] text-white">
+        <div className="footer bg-primary-500 text-white">
             <div className="content max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
 
                 {/* Logos */}
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
                         <p key={link.href}>
                             <a
                                 href={link.href}
-                                className="hover:text-primary-500 transition"
+                                className="hover:text-white/80 transition"
                             >
                                 {link.label}
                             </a>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
 
                 {/* Contacts */}
                 <div id="footer-contact" className="links flex flex-col space-y-4 items-center md:items-start">
-                    <a href="tel:8001289999" className="flex items-center space-x-2 hover:text-primary-500 transition">
+                    <a href="tel:8001289999" className="flex items-center space-x-2 hover:text-white/80 transition">
                         <img src="https://ta.sdaia.gov.sa/assets/img/en/phone.svg" alt="Phone" />
                         <span>+2121289999</span>
                     </a>
@@ -49,14 +49,14 @@ const Footer: React.FC = () => {
                         href="https://twitter.com/tawakkalnaapp"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-2 hover:text-primary-500 transition"
+                        className="flex items-center space-x-2 hover:text-white/80 transition"
                     >
                         <img src="https://ta.sdaia.gov.sa/assets/img/en/twitter-fill-1.svg" alt="Twitter" />
                         <span>@Morocco_View</span>
                     </a>
                     <a
                         href="mailto:contact@tawakkalna.gov.sa"
-                        className="flex items-center space-x-2 hover:text-primary-500 transition"
+                        className="flex items-center space-x-2 hover:text-white/80 transition"
                     >
                         <img src="https://ta.sdaia.gov.sa/assets/img/en/Message_fill.svg" alt="Email" />
                         <span>contact@moroccoView.com</span>
@@ -82,14 +82,6 @@ const Footer: React.FC = () => {
                             className="btn inline-block"
                         >
                             <img src="https://ta.sdaia.gov.sa/assets/img/ar/google.svg" alt="Google Play" />
-                        </a>
-                        <a
-                       //     href="https://appgallery5.huawei.com/#/app/C105842523"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn inline-block"
-                        >
-                            <img src="https://ta.sdaia.gov.sa/assets/img/ar/AppGallery.svg" alt="AppGallery" />
                         </a>
                     </div>
                 </div>

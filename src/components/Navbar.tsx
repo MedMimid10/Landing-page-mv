@@ -54,7 +54,8 @@ const Navbar = () => {
           <img src={Logo} alt="Morocco View Logo" className="h-12" />
         </div>
         
-        <div className="hidden md:flex items-center space-x-6">
+        {/* Desktop Nav - Hidden below 960px */}
+        <div className="hidden lg960:flex items-center space-x-3 xl:space-x-6">
           {navItems.map((item) => (
             <a 
               key={item.name}
@@ -71,14 +72,17 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
+          {/* Button visible on desktop */}
           <button 
-            className="btn-primary"
+            className="hidden lg960:block btn-primary"
             onClick={() => scrollToSection('pricing')}
           >
             Request Demo
           </button>
+          
+          {/* Mobile menu button - visible below 960px */}
           <button 
-            className="md:hidden text-primary-500" 
+            className="lg960:hidden text-primary-500" 
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -86,10 +90,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - visible below 960px when menu is open */}
       {isOpen && (
         <motion.div 
-          className="md:hidden bg-white py-4 px-6 shadow-lg rounded-b-lg"
+          className="lg960:hidden bg-white py-4 px-6 shadow-lg rounded-b-lg"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >

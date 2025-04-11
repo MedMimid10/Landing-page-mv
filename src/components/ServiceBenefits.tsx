@@ -103,7 +103,7 @@ const ServiceBenefits: React.FC = () => {
         viewport={{ once: true }}
       >
         <SectionTitle
-          title="Essential Travel Services"
+          title="Essential Services"
           subtitle="Everything you need for a smooth journey"
         />
 

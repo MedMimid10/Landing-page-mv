@@ -55,7 +55,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           <p className="text-xl font-semibold text-white mb-6">Learn how this service works</p>
           <p className="text-white/80 mb-8">Get detailed information about features, pricing, and see app screenshots</p>
           <button
-            className="btn-primary bg-white text-primary-500 hover:bg-white/90 px-6 py-3 rounded-lg font-semibold transition-all shadow-md hover:shadow-lg"
+            className="btn-primary bg-white text-primary-500 hover:bg-white/50 px-6 py-3 rounded-lg font-semibold transition-all shadow-md hover:shadow-lg"
             onClick={(e) => {
               e.stopPropagation();
               onCtaClick();

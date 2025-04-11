@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, ExternalLink } from 'lucide-react';
+import { Check, ExternalLink } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from './SectionTitle';
@@ -14,8 +14,7 @@ const plans = [
     color: "from-primary-600 to-primary-800",
     features: [
       "Unlimited access to tours",
-      "Offline maps",
-      "Audio guides",
+      "Customized tours",
       "Real-time translations",
       "24/7 support"
     ]
@@ -39,7 +38,6 @@ const plans = [
 
 const Pricing = () => {
   const [selectedPlan, setSelectedPlan] = useState<string>(plans[0].id);
-  const [formStage, setFormStage] = useState<"plan" | "contact">("plan");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -59,7 +57,6 @@ const Pricing = () => {
     e.preventDefault();
     // In a real app, you would submit the form data to your backend here
     alert(`Thank you for your interest in our ${currentPlan.name} plan! We'll contact you soon.`);
-    setFormStage("plan");
     setFormData({
       name: "",
       email: "",
@@ -85,9 +82,8 @@ const Pricing = () => {
                 key={plan.id}
                 onClick={() => {
                   setSelectedPlan(plan.id);
-                  setFormStage("plan");
                 }}
-                className={`w-40 py-3 rounded-full transition-all font-medium text-center ${
+                className={`w-40 sm:w-60 py-3 rounded-full transition-all font-medium text-center ${
                   selectedPlan === plan.id
                     ? "bg-primary-500 text-white shadow-lg"
                     : "text-primary-500 hover:bg-primary-50"
@@ -99,14 +95,13 @@ const Pricing = () => {
           </div>
         </div>
 
-
         {/* Plan Card with Details and Form */}
         <motion.div
-          key={`${selectedPlan}-${formStage}`}
+          key={selectedPlan}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-6xl mx-auto"
         >
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             {/* Card Header */}
@@ -121,81 +116,44 @@ const Pricing = () => {
 
             {/* Card Content */}
             <div className="p-8">
-              {formStage === "plan" ? (
-                <>
-                  {selectedPlan === "traveler" ? (
-                    // Traveler Plan Layout
-                    <div>
-                      <h4 className="text-lg font-semibold text-primary-500 mb-6">What's included:</h4>
-                      <ul className="space-y-4 mb-8">
-                        {currentPlan.features.map((feature, i) => (
-                          <li key={i} className="flex items-center gap-3 text-primary-500">
-                            <div className="bg-primary-100 p-1 rounded-full">
-                              <Check className="w-4 h-4 text-primary-500 flex-none" />
-                            </div>
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      <div className="mt-8">
-                        <button 
-                          onClick={() => setFormStage("contact")}
-                          className="w-full btn-primary bg-primary-500 text-white flex items-center justify-center gap-2 py-3 rounded-lg hover:bg-primary-600 transition-all"
-                        >
-                          <span>Request {currentPlan.name} Demo</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
-                  ) : (
-                    // Business Partner Layout
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <div>
-                        <h4 className="text-lg font-semibold text-primary-500 mb-6">What's included:</h4>
-                        <ul className="space-y-4 mb-8">
-                          {currentPlan.features.map((feature, i) => (
-                            <li key={i} className="flex items-center gap-3 text-primary-500">
-                              <div className="bg-primary-100 p-1 rounded-full">
-                                <Check className="w-4 h-4 text-primary-500 flex-none" />
-                              </div>
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="flex flex-col justify-center">
-                        <div className="rounded-xl overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 p-6 border border-primary-200 shadow-sm">
-                          <h4 className="text-lg font-bold text-primary-600 mb-3">Business Partner Details</h4>
-                          <p className="text-primary-600/80 mb-4">
-                            View our comprehensive back office features, agency dashboard, and partner benefits.
-                          </p>
-                          <Link 
-                            to="/business-partner" 
-                            className="group flex items-center justify-between bg-primary-500 hover:bg-primary-600 text-white py-3 px-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                          >
-                            <span className="text-base font-semibold">Explore Business Partner</span>
-                            <div className="bg-white/20 rounded-full p-1.5 group-hover:bg-white/30 transition-colors">
-                              <ExternalLink className="w-4 h-4" />
-                            </div>
-                          </Link>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Left Column - Features */}
+                <div>
+                  <h4 className="text-lg font-semibold text-primary-500 mb-6">What's included:</h4>
+                  <ul className="space-y-4 mb-8">
+                    {currentPlan.features.map((feature, i) => (
+                      <li key={i} className="flex items-center gap-3 text-primary-500">
+                        <div className="bg-primary-100 p-1 rounded-full">
+                          <Check className="w-4 h-4 text-primary-500 flex-none" />
                         </div>
-                      </div>
-                      
-                      <div className="md:col-span-2">
-                        <button 
-                          onClick={() => setFormStage("contact")}
-                          className="w-full btn-primary bg-primary-500 text-white flex items-center justify-center gap-2 py-3 rounded-lg hover:bg-primary-600 transition-all"
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  {/* Business Partner Details (only for business plan) */}
+                  {selectedPlan === "business" && (
+                    <div className="mt-8">
+                      <div className="rounded-xl overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 p-6 border border-primary-200 shadow-sm">
+                        <h4 className="text-lg font-bold text-primary-600 mb-3">Business Partner Details</h4>
+                        <p className="text-primary-600/80 mb-4">
+                          View our comprehensive back office features, agency dashboard, and partner benefits.
+                        </p>
+                        <Link 
+                          to="/business-partner" 
+                          className="group flex items-center justify-between bg-primary-500 hover:bg-primary-600 text-white py-3 px-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
                         >
-                          <span>Request {currentPlan.name} Demo</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </button>
+                          <span className="text-base font-semibold">Explore Business Partner</span>
+                          <div className="bg-white/20 rounded-full p-1.5 group-hover:bg-white/30 transition-colors">
+                            <ExternalLink className="w-4 h-4" />
+                          </div>
+                        </Link>
                       </div>
                     </div>
                   )}
-                </>
-              ) : (
+                </div>
+                
+                {/* Right Column - Contact Form */}
                 <div>
                   <h4 className="text-lg font-semibold text-primary-500 mb-6">
                     {selectedPlan === "traveler" ? "Request Traveler Demo" : "Apply as Business Partner"}
@@ -211,7 +169,8 @@ const Pricing = () => {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="w-full rounded-lg border-primary-200 focus:border-primary-500 focus:ring focus:ring-primary-500/20" 
+                          placeholder="Your name"
+                          className="w-full h-12 px-4 rounded-lg border-2 border-primary-100 bg-primary-50/50 focus:border-primary-500 focus:ring focus:ring-primary-500/20 placeholder-primary-300" 
                         />
                       </div>
                       
@@ -223,7 +182,8 @@ const Pricing = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full rounded-lg border-primary-200 focus:border-primary-500 focus:ring focus:ring-primary-500/20" 
+                          placeholder="Your email address"
+                          className="w-full h-12 px-4 rounded-lg border-2 border-primary-100 bg-primary-50/50 focus:border-primary-500 focus:ring focus:ring-primary-500/20 placeholder-primary-300" 
                         />
                       </div>
                     </div>
@@ -236,7 +196,8 @@ const Pricing = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full rounded-lg border-primary-200 focus:border-primary-500 focus:ring focus:ring-primary-500/20" 
+                          placeholder="Your phone number"
+                          className="w-full h-12 px-4 rounded-lg border-2 border-primary-100 bg-primary-50/50 focus:border-primary-500 focus:ring focus:ring-primary-500/20 placeholder-primary-300" 
                         />
                       </div>
                       
@@ -248,7 +209,8 @@ const Pricing = () => {
                             name="businessName"
                             value={formData.businessName}
                             onChange={handleInputChange}
-                            className="w-full rounded-lg border-primary-200 focus:border-primary-500 focus:ring focus:ring-primary-500/20" 
+                            placeholder="Your business name"
+                            className="w-full h-12 px-4 rounded-lg border-2 border-primary-100 bg-primary-50/50 focus:border-primary-500 focus:ring focus:ring-primary-500/20 placeholder-primary-300" 
                           />
                         </div>
                       )}
@@ -265,28 +227,21 @@ const Pricing = () => {
                           ? "Tell us about your travel plans..." 
                           : "Tell us about your business and how you'd like to partner..."
                         }
-                        className="w-full rounded-lg border-primary-200 focus:border-primary-500 focus:ring focus:ring-primary-500/20" 
+                        className="w-full px-4 py-3 rounded-lg border-2 border-primary-100 bg-primary-50/50 focus:border-primary-500 focus:ring focus:ring-primary-500/20 placeholder-primary-300" 
                       />
                     </div>
                     
-                    <div className="flex gap-4 pt-2">
-                      <button 
-                        type="button" 
-                        onClick={() => setFormStage("plan")}
-                        className="flex-1 py-3 rounded-lg border border-primary-200 text-primary-500 hover:bg-primary-50 transition-all"
-                      >
-                        Back to Plan
-                      </button>
+                    <div className="pt-2">
                       <button 
                         type="submit" 
-                        className="flex-1 btn-primary py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 transition-all"
+                        className="w-full btn-primary py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 transition-all font-medium"
                       >
-                        Submit Request
+                        {selectedPlan === "traveler" ? "Request Demo" : "Apply Now"}
                       </button>
                     </div>
                   </form>
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </motion.div>

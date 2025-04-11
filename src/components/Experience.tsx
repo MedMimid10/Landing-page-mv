@@ -2,21 +2,39 @@ import { animate, motion, useMotionValue } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import SectionTitle from './SectionTitle';
+import home from '../assets/screens/dashboard.jpeg';
+import emergency_contacts from '../assets/screens/emergency_contact.jpeg';
+import esim from '../assets/screens/esim_list.jpeg';
+import esim_purchase from '../assets/screens/esim_buy.jpeg';
+import events from '../assets/screens/event_gtx_details.jpeg';
+import currency from '../assets/screens/money_exange.jpeg';
 
 const screenshots = [
-  // Add 10-12 image objects here
-  { url: "https://images.unsplash.com/photo-1597043851759-3b370e989b5f?auto=format&fit=crop&w=600", title: "Discover Local Experiences" },
-  { url: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=600", title: "Book Authentic Tours" },
-  { url: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600", title: "Explore Historic Sites" },
-  { url: "https://images.unsplash.com/photo-1557246565-8a3d3ab5d7f6?auto=format&fit=crop&w=600", title: "Navigate Local Markets" },
-  { url: "https://images.unsplash.com/photo-1590766940722-a458fd4a0751?auto=format&fit=crop&w=600", title: "Experience Local Culture" },
-  { url: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=600", title: "Enjoy Street Food" },
-  { url: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=600", title: "Meet Local Artisans" },
-  { url: "https://images.unsplash.com/photo-1616627562285-0f7b44c61b7f?auto=format&fit=crop&w=600", title: "Attend Cultural Events" },
-  { url: "https://images.unsplash.com/photo-1582719478250-cfe71a16f9d4?auto=format&fit=crop&w=600", title: "Experience Desert Tours" },
-  { url: "https://images.unsplash.com/photo-1581324093875-6a6c0e67fcf4?auto=format&fit=crop&w=600", title: "Discover Handicrafts" },
-  { url: "https://images.unsplash.com/photo-1526655009434-c7f3b1ec2228?auto=format&fit=crop&w=600", title: "Explore Coastal Cities" },
-  { url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600", title: "Ride Through Atlas Mountains" }
+  // Morocco View app screenshots from the shared images
+  { 
+    url: home, 
+    title: "Explore Morocco" 
+  },
+  { 
+    url: emergency_contacts, 
+    title: "Emergency Contacts" 
+  },
+  { 
+    url: esim, 
+    title: "eSIM Services" 
+  },
+  { 
+    url: esim_purchase, 
+    title: "Buy eSIM" 
+  },
+  { 
+    url: events, 
+    title: "Gitex Africa Morocco" 
+  },
+  { 
+    url: currency, 
+    title: "Currency Converter" 
+  }
 ];
 
 const Experience = () => {
@@ -48,6 +66,7 @@ const Experience = () => {
       // Update the center position when container width changes or active index changes
       centerActiveCard();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [containerWidth, activeIndex]);
 
   const centerActiveCard = () => {
@@ -71,7 +90,7 @@ const Experience = () => {
     setActiveIndex(newIndex);
   };
 
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: { offset: { x: number } }) => {
+  const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: { offset: { x: number } }) => {
     const threshold = 50;
     if (info.offset.x > threshold && activeIndex > 0) {
       handleNavigate(activeIndex - 1);

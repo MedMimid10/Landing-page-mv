@@ -91,13 +91,13 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, service })
                     ))}
                   </ul>
                   
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  {/* <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
                     <h3 className="text-lg font-semibold mb-1 flex items-center text-primary-500">
                       <span className="w-1 h-5 bg-primary-500 rounded-full mr-2"></span>
                       Pricing
                     </h3>
                     <p className="text-lg font-bold text-primary-500">{service.price}</p>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Screenshots Section - 60% width */}

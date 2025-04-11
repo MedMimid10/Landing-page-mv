@@ -36,6 +36,9 @@ export default {
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
+      screens: {
+        'lg960': '960px',
+      },
     },
   },
   plugins: [],

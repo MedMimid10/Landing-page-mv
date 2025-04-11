@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { MapPin, Music, ShoppingBag, Utensils } from 'lucide-react';
-import React from 'react';
 import SectionTitle from './SectionTitle';
 
 const categories = [
@@ -8,29 +7,29 @@ const categories = [
     title: "Monuments",
     icon: MapPin,
     description: "Discover Morocco's rich architectural heritage, from ancient medinas to imperial cities.",
-    image: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800",
-    bullets: ["Hassan II Mosque", "Bahia Palace", "Volubilis Roman ruins"]
+    image: "https://images.unsplash.com/photo-1581444072387-f3cbbcc8fe33?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    bullets: ["Hassan II Mosque", "Bahia Palace", "Jamaa el-Fna"]
   },
   {
-    title: "Souks",
+    title: "Artisanal Souks",
     icon: ShoppingBag,
     description: "Immerse yourself in the vibrant traditional markets of Morocco.",
-    image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/71/3b/eb.jpg",
-    bullets: ["Spice markets", "Handcrafted goods", "Traditional carpets"]
+    image: "https://images.unsplash.com/photo-1605882090044-aa9cbe6df29e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    bullets: ["Souks", "Handcrafted goods", "Traditional carpets", "Local crafts"]
   },
   {
     title: "Entertainment",
     icon: Music,
     description: "Experience the lively cultural performances and festivals.",
-    image: "https://images.unsplash.com/photo-1590766940722-a458fd4a0751?auto=format&fit=crop&w=800",
-    bullets: ["Gnawa music", "Fire dancers", "Street performers"]
+    image: "https://images.unsplash.com/photo-1674941237423-265dbce60724?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    bullets: ["Nightlife", "Traditional Moroccan music", "Moroccan dance", "Cultural performances"]
   },
   {
-    title: "Cuisine",
+    title: "Restaurants",
     icon: Utensils,
-    description: "Savor the flavors of authentic Moroccan gastronomy.",
-    image: "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800",
-    bullets: ["Tagine dishes", "Mint tea ceremony", "Local pastries"]
+    description: "Discover the best Moroccan restaurants and culinary experiences."	,
+    image: "https://images.unsplash.com/photo-1587289517919-b92407d60bbb?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    bullets: ["Moroccan cuisine", "International dishes", "Cafe culture", "Traditional Moroccan food"]
   }
 ];
 
@@ -76,7 +75,7 @@ const ExploreMorocco = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="btn-primary">Learn More</button>
+                {/* <button className="btn-primary">Learn More</button> */}
               </div>
             </motion.div>
           ))}

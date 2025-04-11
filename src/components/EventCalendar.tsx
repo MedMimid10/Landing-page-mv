@@ -53,7 +53,7 @@ const EventCalendar = () => {
     },
     {
       title: "GITEX Morocco Tech Festival",
-      date: "May 29-31, 2024",
+      date: "April 14-16, 2025",
       time: "10:00 AM - 6:00 PM",
       location: "Casablanca Exhibition Center",
       category: "Technology",
@@ -62,7 +62,7 @@ const EventCalendar = () => {
     },
     {
       title: "A Thousand and One Nights",
-      date: "March 15-20, 2024",
+      date: "March 15-20, 2025",
       time: "7:00 PM",
       location: "Marrakech Cultural Center",
       category: "Cultural Festival",
@@ -71,7 +71,7 @@ const EventCalendar = () => {
     },
     {
       title: "Fes Sacred Music Festival",
-      date: "March 25-30, 2024",
+      date: "March 25-30, 2025",
       time: "Various Times",
       location: "Fes Medina",
       category: "Music & Arts",

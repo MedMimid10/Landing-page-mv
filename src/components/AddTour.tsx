@@ -1,9 +1,15 @@
 import { motion } from 'framer-motion';
-import { Play, Plus } from 'lucide-react';
-import React from 'react';
+import { Play } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 
 const AddTour = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <section id="tours" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -34,15 +40,14 @@ const AddTour = () => {
             Create and share your unique Moroccan experiences with our easy-to-use tour creation platform. 
             Whether you're a local guide or a travel enthusiast, your perspective matters.
           </p>
-          <div className="flex gap-4 justify-center">
-            <button className="btn-primary flex items-center gap-2">
-              <Play className="w-4 h-4" />
-              Watch Tutorial
+          <div className="flex justify-center">
+            <button className="btn-primary flex items-center justify-center w-52" onClick={() => scrollToSection('pricing')}>
+              Request Demo
             </button>
-            <button className="btn-outline flex items-center gap-2">
+            {/* <button className="btn-outline flex items-center gap-2">
               <Plus className="w-4 h-4" />
               Try Adding a Tour Now
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

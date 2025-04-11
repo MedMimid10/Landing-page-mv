@@ -1,6 +1,4 @@
 import { motion } from 'framer-motion';
-import { Store as AppStore, Store as PlayStore } from 'lucide-react';
-import React from 'react';
 import mockupImg from '../assets/img/mockup-img.png';
 
 const Hero = () => {
