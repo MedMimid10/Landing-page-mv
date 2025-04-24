@@ -3,7 +3,7 @@ import mockupImg from '../assets/img/mockup-img.png';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-24 pb-16 gradient-primary overflow-hidden">
+    <section id="home" className="pt-24 pb-16 mx-auto gradient-primary overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}

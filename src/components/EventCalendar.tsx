@@ -61,23 +61,24 @@ const EventCalendar = () => {
       image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800"
     },
     {
-      title: "A Thousand and One Nights",
-      date: "March 15-20, 2025",
-      time: "7:00 PM",
-      location: "Marrakech Cultural Center",
-      category: "Cultural Festival",
-      description: "Experience the magic of ancient Moroccan storytelling traditions.",
-      image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=800"
+      "title": "Chess and Networking for Entrepreneurs",
+      "date": "April 23, 2025",
+      "time": "6:00 PM - 9:00 PM",
+      "location": "Commons Zerktouni, Avenue Mers Sultan, Casablanca, Maroc",
+      "category": "Networking & Games",
+      "description": "A unique evening of chess and networking designed for entrepreneurs to connect, strategize, and exchange ideas.",
+      "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F693393309%2F1205106313463%2F1%2Foriginal.20240208-231057?w=600&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C400%2C1600%2C800&s=e89204ec750e0dac257d27dc57d98834"
     },
     {
-      title: "Fes Sacred Music Festival",
-      date: "March 25-30, 2025",
-      time: "Various Times",
-      location: "Fes Medina",
-      category: "Music & Arts",
-      description: "A celebration of spiritual and sacred music from around the world.",
-      image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800"
+      "title": "Sound Baths in Tamraght",
+      "date": "April 23, 2025",
+      "time": "6:30 PM - 7:30 PM GMT+1",
+      "location": "Le Riad des 3 Soeurs, Tamraght, Souss-Massa 80023",
+      "category": "Wellness & Meditation",
+      "description": "A relaxing sound healing session with crystal singing bowls and guided meditation in a serene riad setting.",
+      "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F996935763%2F1520880044223%2F1%2Foriginal.20250331-174552?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.479532163743&fp-y=0.669527896996&s=1b027321ec8748005149ece799733d52"
     }
+
   ];
 
   return (

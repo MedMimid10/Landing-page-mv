@@ -15,7 +15,7 @@ import BusinessPartner from './pages/BusinessPartner';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-primary-50">
+      <div className="min-h-screen overflow-x-hidden bg-primary-50">
         <Navbar />
         <Routes>
           <Route path="/" element={

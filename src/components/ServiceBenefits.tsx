@@ -1,12 +1,19 @@
-// components/ServiceBenefits.tsx
 import { motion } from 'framer-motion';
 import { Car, DollarSign, Wifi } from 'lucide-react';
 import React, { useState } from 'react';
 import SectionTitle from './SectionTitle';
 import ServiceCard from './ServiceCard';
 import ServiceModal from './ServiceModal';
+import SCRSIM1 from '../assets/screens/eSIM1.jpg'
+import SCRSIM2 from '../assets/screens/eSIM2.jpg'
+import SCRSIM3 from '../assets/screens/eSIM3.jpg'
+import Hotel1 from '../assets/screens/Hotel1.jpg'
+import Hotel2 from '../assets/screens/Hotel2.jpg'
+import Hotel3 from '../assets/screens/Hotel3.jpg'
+import exch1 from '../assets/screens/exch1.jpg'
+import exch2 from '../assets/screens/exch2.jpg'
+import exch3 from '../assets/screens/exch3.jpg'
 
-// Define the service structure
 interface Service {
   id: string;
   title: string;
@@ -35,9 +42,9 @@ const services: Service[] = [
     ],
     price: '25 USD',
     screenshots: [
-      '/screenshots/esim1.png',
-      '/screenshots/esim2.png',
-      '/screenshots/esim3.png'
+      SCRSIM1,
+      SCRSIM2,
+      SCRSIM3
     ]
   },
   {
@@ -56,9 +63,9 @@ const services: Service[] = [
     ],
     price: 'Starting from 30 USD',
     screenshots: [
-      '/screenshots/pickup1.png',
-      '/screenshots/pickup2.png',
-      '/screenshots/pickup3.png'
+      Hotel1,
+      Hotel2,
+      Hotel3
     ]
   },
   {
@@ -77,9 +84,9 @@ const services: Service[] = [
     ],
     price: '1% of transaction amount',
     screenshots: [
-      '/screenshots/exchange1.png',
-      '/screenshots/exchange2.png',
-      '/screenshots/exchange3.png'
+      exch1,
+      exch2,
+      exch3
     ]
   },
 ];

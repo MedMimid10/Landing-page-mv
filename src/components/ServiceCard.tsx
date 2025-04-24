@@ -1,4 +1,3 @@
-// components/ServiceCard.tsx
 import { motion } from 'framer-motion';
 import React from 'react';
 
@@ -23,7 +22,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <motion.div
-      className="relative h-[420px] perspective-1000 cursor-pointer"
+      className="relative h-[350px] perspective-1000 cursor-pointer"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
       whileHover={{ scale: 1.02 }}

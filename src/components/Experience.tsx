@@ -8,6 +8,10 @@ import esim from '../assets/screens/esim_list.jpeg';
 import esim_purchase from '../assets/screens/esim_buy.jpeg';
 import events from '../assets/screens/event_gtx_details.jpeg';
 import currency from '../assets/screens/money_exange.jpeg';
+import pickup1 from '../assets/screens/pickupRemp.jpg';
+import exch1 from '../assets/screens/moneyEXRemp.jpg';
+import enter1 from '../assets/screens/Screenshot_2025-04-17-13-12-13-130_host.exp.exponent.jpg';
+import restau from '../assets/screens/Screenshot_2025-04-17-13-13-15-439_host.exp.exponent.jpg';
 
 const screenshots = [
   // Morocco View app screenshots from the shared images
@@ -34,7 +38,24 @@ const screenshots = [
   { 
     url: currency, 
     title: "Currency Converter" 
-  }
+  },
+  {
+    url: pickup1,
+    title: "Hotel Pickup"
+  },
+  {
+    url: exch1,
+    title: "Money Exchange  Brokers"
+  },
+  {
+    url: enter1,
+    title: "Entertainments"
+  },
+  {
+    url: restau,
+    title: "Restaurants"
+  },
+
 ];
 
 const Experience = () => {
@@ -190,7 +211,7 @@ const Experience = () => {
                       <img
                         src={screenshot.url}
                         alt={screenshot.title}
-                        className="w-full h-full object-cover rounded-[2.5rem]"
+                        className="w-full h-full object-bottom rounded-[2.5rem]"
                       />
                       <div className={`absolute inset-0 rounded-[2.5rem] ${index === activeIndex ? 'bg-gradient-to-t from-black/50 to-transparent' : 'bg-black/20'}`}></div>
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform transition-all">

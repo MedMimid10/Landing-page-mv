@@ -41,12 +41,13 @@ const Footer: React.FC = () => {
 
                 {/* Contacts */}
                 <div id="footer-contact" className="links flex flex-col space-y-4 items-center md:items-start">
-                    <a href="tel:8001289999" className="flex items-center space-x-2 hover:text-white/80 transition">
+                    <a //href="#"
+                       className="flex items-center space-x-2 hover:text-white/80 transition">
                         <img src="https://ta.sdaia.gov.sa/assets/img/en/phone.svg" alt="Phone" />
                         <span>+2121289999</span>
                     </a>
                     <a
-                        href="https://twitter.com/tawakkalnaapp"
+                     //   href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2 hover:text-white/80 transition"
@@ -55,7 +56,7 @@ const Footer: React.FC = () => {
                         <span>@Morocco_View</span>
                     </a>
                     <a
-                        href="mailto:contact@tawakkalna.gov.sa"
+                       // href="#"
                         className="flex items-center space-x-2 hover:text-white/80 transition"
                     >
                         <img src="https://ta.sdaia.gov.sa/assets/img/en/Message_fill.svg" alt="Email" />

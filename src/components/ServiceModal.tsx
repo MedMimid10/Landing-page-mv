@@ -44,9 +44,9 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, service })
           />
 
           {/* Modal */}
-          <div className="fixed inset-0 flex items-center justify-center z-50 p-4 overflow-y-auto">
+            <div className="fixed inset-0 flex items-start md:items-center justify-center z-50 p-4 overflow-y-auto">
             <motion.div
-              className="bg-white rounded-2xl shadow-xl max-w-5xl w-full my-4 mx-auto relative overflow-hidden"
+              className="bg-white rounded-2xl shadow-xl max-w-5xl w-full my-4 mx-auto relative max-h-[calc(100vh-2rem)] overflow-y-auto"
               variants={modalVariants}
               initial="hidden"
               animate="visible"
@@ -54,7 +54,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, service })
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               {/* Header */}
-              <div className="bg-gradient-to-r from-primary-500 to-primary-400 p-5 pt-14 md:pt-5 relative">
+                <div className="sticky top-0 z-20 bg-gradient-to-r from-primary-500 to-primary-400 p-5 md:pt-14 pt-5">
                 <button
                   onClick={onClose}
                   className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 rounded-full p-2 text-white transition-colors"
@@ -62,7 +62,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, service })
                 >
                   <X className="w-5 h-5" />
                 </button>
-                
+
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
                   <div className="bg-white/20 p-3 rounded-full">
                     <service.icon className="w-8 h-8 text-white" />
@@ -90,7 +90,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, service })
                       </li>
                     ))}
                   </ul>
-                  
+
                   {/* <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
                     <h3 className="text-lg font-semibold mb-1 flex items-center text-primary-500">
                       <span className="w-1 h-5 bg-primary-500 rounded-full mr-2"></span>
@@ -108,18 +108,18 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, service })
                   </h3>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     {service.screenshots.map((screenshot, index) => (
-                      <motion.div 
-                        key={index} 
+                      <motion.div
+                        key={index}
                         className="relative h-[350px] w-[200px] rounded-[1.5rem] overflow-hidden shadow-lg border-8 border-gray-800 bg-gray-800"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.2 }}
                       >
-                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-3 bg-gray-800 rounded-b-lg z-10"></div>
+                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-3 bg-gray-800 rounded-b-lg z-0"></div>
                         <img
                           src={screenshot}
                           alt={`${service.title} screenshot ${index + 1}`}
-                          className="w-full h-full object-cover rounded-[1rem]"
+                          className="w-full h-full object-bottom rounded-[1rem]"
                         />
                       </motion.div>
                     ))}
@@ -129,7 +129,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, service })
 
               {/* Footer */}
               <div className="p-4 bg-gray-50 border-t border-gray-100 flex justify-end">
-                <button 
+                <button
                   onClick={onClose}
                   className="btn-primary text-sm py-1.5 px-5"
                 >
