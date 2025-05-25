@@ -5,7 +5,7 @@ import SectionTitle from './SectionTitle';
 import home from '../assets/screens/dashboard.jpeg';
 import emergency_contacts from '../assets/screens/emergency_contact.jpeg';
 import esim from '../assets/screens/esim_list.jpeg';
-import esim_purchase from '../assets/screens/esim_buy.jpeg';
+import esim_purchase from '../assets/screens/by_esim_modal.jpeg';
 import events from '../assets/screens/event_gtx_details.jpeg';
 import currency from '../assets/screens/money_exange.jpeg';
 import pickup1 from '../assets/screens/pickupRemp.jpg';

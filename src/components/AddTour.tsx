@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
-import ReactPlayer from 'react-player/youtube';
 import SectionTitle from './SectionTitle';
+import create_tour from '../assets/videos/create_tour.mp4';
 
 const AddTour = () => {
   const scrollToSection = (sectionId: string) => {
@@ -25,19 +24,14 @@ const AddTour = () => {
               className="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl"
           >
             {/* Embedded YouTube Video */}
-            <ReactPlayer
-                url="https://www.youtube.com/watch?v=tui9hq9lfsU"
-                width="100%"
-                height="100%"
-                controls
-                light={false}
-                playIcon={
-                  <div className="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center transform transition-transform hover:scale-110">
-                    <Play className="w-8 h-8 text-white ml-1" />
-                  </div>
-                }
-                className="rounded-2xl"
-            />
+            <video
+              src={create_tour}
+              controls
+              className="w-full h-full rounded-2xl"
+            >
+              Your browser does not support the video tag.
+            </video>
+
           </motion.div>
 
           <div className="mt-12 text-center">
