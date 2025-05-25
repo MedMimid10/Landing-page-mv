@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import SectionTitle from './SectionTitle';
-import create_tour from '../assets/videos/create_tour.mp4';
 
 const AddTour = () => {
   const scrollToSection = (sectionId: string) => {
@@ -25,7 +24,7 @@ const AddTour = () => {
           >
             {/* Embedded YouTube Video */}
             <video
-              src={create_tour}
+              src="/videos/create_tour.mp4"
               controls
               className="w-full h-full rounded-2xl"
             >
